@@ -12,6 +12,9 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     overflow-x: hidden;
     font-weight: normal;
 
