@@ -24,7 +24,7 @@ export default class App extends Component {
 
             <Switch>
               <Route exact path={"/"} component={Home} />
-              <Route exact path={"/about-me"} component={About} />
+              <Route exact path={"/about"} component={About} />
               <Route exact path={"/contact-me"} component={Contact} />
               <Route exact path={"/blog"} component={Blog} />
             </Switch>
@@ -36,7 +36,7 @@ export default class App extends Component {
           <h3>
           {moment().format('MMMM Do YYYY, h:mm:ss A')}
           </h3>
-          <PortfolioContainer />
+          
         </div>
       </div>
     );
