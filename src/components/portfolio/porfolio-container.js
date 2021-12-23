@@ -9,40 +9,17 @@ export default class PortfolioContainer extends Component {
     this.state = {
       pageTitle: "Charlie's Portfolio",
       isLoading: false,
-      data: [
-        {title: "845th Signal BN",
-        category: "Military",
-        dates: "1996-2003",
-        slug:"845th"}, 
-        {title: "HAM Marine",
-        category: "Shipbuilging",
-        slug:"ham"}, 
-        {title: "FGO",
-        category: "Shipbuilging",
-        slug:"fgo"}, 
-        {title: "HII",
-        category: "Shipbuilging",
-        slug:"hii"}, 
-        {title: "1181st DDSB",
-        category: "Military",
-        slug:"1181st"}, 
-        {title: "Austal USA",
-        category: "Shipbuilging",
-        slug:"ausa"}, 
-        {title: "1184th DDSB",
-        category: "Military",
-        slug:"1184th"}
-      ]
+      data: []
 
       }; 
 
       this.handlefilter = this.handlefilter.bind(this)
-      this.getPortfolioItems = this.getPortfolioItems.bind(this)
+      
   }
 
   portfolioItems() {
     return this.state.data.map(item => {
-      return <PortfolioItem title = {item.title} slug={item.slug} />;
+      return <PortfolioItem title = {item.name} url={item.url} slug={item.id} />;
     });
   }
 
@@ -57,11 +34,18 @@ export default class PortfolioContainer extends Component {
   getPortfolioItems() {
     axios.get('https://clovejoy3178.devcamp.space/portfolio/portfolio_items')
     .then(response => {
-      console.log(response);
+      // console.log(response);
+      this.setState({
+        data: response.data.portfolio_items
+      })
     })
     .catch(error => {
       console.log(error);
     })
+  }
+
+  componentDidMount() {
+    this.getPortfolioItems();
   }
 
   render() {
@@ -69,7 +53,7 @@ export default class PortfolioContainer extends Component {
       return <div>Loading....</div>
     }
 
-    this.getPortfolioItems();
+    
 
     return (
       <div>
