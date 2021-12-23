@@ -12,19 +12,26 @@ export default class PortfolioContainer extends Component {
       data: [
         {title: "845th Signal BN",
         category: "Military",
-        dates: "1996-2003"}, 
+        dates: "1996-2003",
+        slug:"845th"}, 
         {title: "HAM Marine",
-        category: "Shipbuilging"}, 
+        category: "Shipbuilging",
+        slug:"ham"}, 
         {title: "FGO",
-        category: "Shipbuilging"}, 
+        category: "Shipbuilging",
+        slug:"fgo"}, 
         {title: "HII",
-        category: "Shipbuilging"}, 
+        category: "Shipbuilging",
+        slug:"hii"}, 
         {title: "1181st DDSB",
-        category: "Military"}, 
+        category: "Military",
+        slug:"1181st"}, 
         {title: "Austal USA",
-        category: "Shipbuilging"}, 
+        category: "Shipbuilging",
+        slug:"ausa"}, 
         {title: "1184th DDSB",
-        category: "Military"}
+        category: "Military",
+        slug:"1184th"}
       ]
 
       }; 
@@ -34,7 +41,7 @@ export default class PortfolioContainer extends Component {
 
   portfolioItems() {
     return this.state.data.map(item => {
-      return <PortfolioItem title = {item.title}/>;
+      return <PortfolioItem title = {item.title} slug={item.slug} />;
     });
   }
 
