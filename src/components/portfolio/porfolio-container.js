@@ -13,21 +13,12 @@ export default class PortfolioContainer extends Component {
 
       }; 
 
-      this.handlefilter = this.handlefilter.bind(this)
+      this.handleFilter = this.handleFilter.bind(this)
+      
       
   }
 
-  portfolioItems() {
-    return this.state.data.map(item => {
-      return 
-        <PortfolioItem 
-          key={item.id}
-          item={item} 
-        />;
-    });
-  }
-
-  handlefilter(filter) {
+  handleFilter(filter) {
     this.setState({
       data: this.state.data.filter(item => {
         return item.category === filter;
@@ -38,13 +29,22 @@ export default class PortfolioContainer extends Component {
   getPortfolioItems() {
     axios.get('https://clovejoy3178.devcamp.space/portfolio/portfolio_items')
     .then(response => {
-      // console.log(response);
+      console.log(response);
       this.setState({
         data: response.data.portfolio_items
       })
     })
     .catch(error => {
       console.log(error);
+    })
+  }
+
+  portfolioItems() {
+    return this.state.data.map(item => {
+      
+      return(
+      <PortfolioItem key={item.id} item={item} />
+      )
     })
   }
 
@@ -56,8 +56,6 @@ export default class PortfolioContainer extends Component {
     if (this.state.isLoading) {
       return <div>Loading....</div>
     }
-
-    
 
     return (
       <div>
