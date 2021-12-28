@@ -12,7 +12,7 @@ import NoMatch from './pages/no-match.js';
 export default class App extends Component {
   render() {
     return (
-      <div className='app'>
+      <div className='container'>
         <Router>
           <div>
           <NavContainer />
