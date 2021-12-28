@@ -8,13 +8,14 @@ export default function(props) {
     <div className="portfolio-item-wrapper">
       <div
         className="portfolio-img-background"
-        style={{
-          backgroundImage: "url(" + thumb_image_url + ")"
-        }}
+        style={{backgroundImage: "url(" + thumb_image_url + ")"}}
       />
-      <img src={logo} />
-      <div>{description}</div>
-      <Link to={`/portfolio/${id}`}>Link</Link>
+      <div className="image-text-wrapper">
+        <div className="logo-wrapper">
+          <img src={logo} />
+        </div>
+        <div className="subtitle">{description}</div>
+      </div>
     </div>
   );
 }

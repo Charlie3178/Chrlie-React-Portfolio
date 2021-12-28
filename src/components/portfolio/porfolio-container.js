@@ -60,7 +60,6 @@ export default class PortfolioContainer extends Component {
     return (
       <div>
         <h2>{this.state.pageTitle}</h2>
-        <hr/>
         <button onClick={() => this.handlefilter('Military')}>Military</button>
         <button onClick={() => this.handlefilter('Shipbuilging')}>Shilbuilding</button>
         <div className="potrfolio-items-wrapper">
