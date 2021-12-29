@@ -5,7 +5,7 @@ import PortfolioContainer from "../portfolio/porfolio-container";
 export default function() {
     return (
         <div>
-            <PortfolioContainer />
+            <PortfolioContainer /> 
         </div>
     )
 }
